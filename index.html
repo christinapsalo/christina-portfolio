@@ -6,7 +6,7 @@
   <title>Christina Salo | Portfolio</title>
   <meta
     name="description"
-    content="Portfolio website for Christina Salo, Chemical Engineering student focused on energy, reservoir engineering, decarbonization, and data-driven problem solving."
+    content="Portfolio website for Christina Salo, Chemical Engineering student focused on energy, reservoir engineering, decarbonization, and engineering analytics."
   />
   <style>
     :root {
@@ -18,7 +18,7 @@
       --accent-dark: #0b5e57;
       --border: #dbe2ea;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --max-width: 1080px;
+      --max-width: 1120px;
     }
 
     * {
@@ -57,7 +57,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(247, 248, 252, 0.9);
+      background: rgba(247, 248, 252, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(219, 226, 234, 0.8);
     }
@@ -67,6 +67,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 0;
+      gap: 1rem;
     }
 
     .logo {
@@ -87,13 +88,13 @@
     }
 
     .hero {
-      padding: 6rem 0 4rem;
+      padding: 5.5rem 0 4rem;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -106,24 +107,24 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.05;
+      font-size: clamp(2.7rem, 6vw, 4.7rem);
+      line-height: 1.03;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--muted);
       max-width: 60ch;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
 
     .btn {
@@ -158,33 +159,32 @@
       color: var(--accent);
     }
 
-    .hero-card {
+    .headshot-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .headshot-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 1.5rem;
+      border-radius: 28px;
+      padding: 1rem;
       box-shadow: var(--shadow);
+      width: min(100%, 420px);
     }
 
-    .hero-card h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
+    .headshot-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 20px;
     }
 
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+    .hero-note {
       margin-top: 1rem;
-    }
-
-    .tag {
-      padding: 0.45rem 0.75rem;
-      border-radius: 999px;
-      background: #ecfdf5;
-      color: #065f46;
-      font-size: 0.9rem;
-      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
     }
 
     section {
@@ -199,7 +199,7 @@
 
     .section-intro {
       color: var(--muted);
-      max-width: 70ch;
+      max-width: 72ch;
       margin-bottom: 2rem;
     }
 
@@ -248,7 +248,7 @@
 
     .about-box {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 1.5rem;
       align-items: start;
     }
@@ -261,17 +261,35 @@
     }
 
     .stat-box h4 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
     }
 
-    .project-card {
-      height: 100%;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
 
-    .footer {
-      padding: 3rem 0 4rem;
-      color: var(--muted);
-      text-align: center;
+    .pill {
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #065f46;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-card p + p {
+      margin-top: 0.9rem;
+    }
+
+    .resume-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
     .contact-links {
@@ -290,7 +308,13 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 900px) {
+    .footer {
+      padding: 3rem 0 4rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
       .hero-grid,
       .about-box,
       .two-col {
@@ -299,7 +323,6 @@
 
       .nav {
         flex-direction: column;
-        gap: 0.75rem;
         align-items: flex-start;
       }
 
@@ -309,17 +332,17 @@
     }
 
     @media (max-width: 640px) {
-      .nav-links {
-        gap: 0.8rem;
-        font-size: 0.9rem;
+      .hero-actions {
+        flex-direction: column;
       }
 
       .btn {
         width: 100%;
       }
 
-      .hero-actions {
-        flex-direction: column;
+      .nav-links {
+        gap: 0.8rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -330,8 +353,8 @@
       <a href="#top" class="logo">Christina Salo</a>
       <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#leadership">Leadership</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
@@ -343,37 +366,39 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Chemical Engineering Student at UBC</span>
+          <span class="eyebrow">Chemical Engineering Student | UBC</span>
           <h1>Christina Salo</h1>
           <p>
-            I work at the intersection of energy, decarbonization, and engineering analytics -
-            with experience spanning reservoir engineering, emissions reduction, process improvement,
-            and technical leadership.
+            Chemical Engineering student building practical solutions in energy,
+            decarbonization, and engineering analytics.
           </p>
           <p>
-            My background includes developing Power BI dashboards, supporting CleanBC emissions
-            reduction applications, conducting subsurface and production analysis, and leading
-            student initiatives in clean energy and sustainability.
+            My experience spans reservoir engineering, emissions reduction, process design,
+            dashboard development, and sustainability-focused problem solving across both
+            industry and student-led innovation.
           </p>
+
+          <div class="pill-row">
+            <span class="pill">Reservoir Engineering</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">GHG Analysis</span>
+            <span class="pill">Decarbonization</span>
+            <span class="pill">Process Engineering</span>
+            <span class="pill">Clean Energy</span>
+          </div>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Get in touch</a>
-            <a class="btn btn-secondary" href="#resume">View resume</a>
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <h3>Focus Areas</h3>
-          <div class="tag-list">
-            <span class="tag">Reservoir Engineering</span>
-            <span class="tag">Process Engineering</span>
-            <span class="tag">Decarbonization</span>
-            <span class="tag">GHG Analysis</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Data Automation</span>
-            <span class="tag">Clean Energy</span>
-            <span class="tag">Technical Leadership</span>
+        <div class="headshot-wrap">
+          <div class="headshot-card">
+            <img src="christina-headshot.jpg" alt="Portrait of Christina Salo" />
+            <p class="hero-note">Engineering, energy, sustainability, and data-driven problem solving.</p>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
@@ -382,33 +407,100 @@
         <h2 class="section-title">About</h2>
         <p class="section-intro">
           I'm a Bachelor of Applied Science student in Chemical Engineering at the University of British Columbia,
-          specializing in process engineering. I enjoy solving technical problems that combine engineering fundamentals,
-          data analysis, and practical implementation - especially in energy systems and sustainability.
+          specializing in process engineering. I'm especially interested in work that connects engineering fundamentals,
+          energy systems, sustainability, and practical decision-making.
         </p>
 
         <div class="about-box">
           <div class="card">
             <p>
-              Across internships and academic work, I've contributed to projects involving
-              emissions reduction strategy, well performance analysis, reservoir diagnostics,
-              hydraulic modeling, process design, and digital workflow improvement.
+              Across internships, academic work, and student-led initiatives, I have worked on projects involving
+              reservoir analytics, emissions reduction strategy, industrial heat pump opportunities, hydraulic modeling,
+              technical dashboards, and venture concepts in waste-to-value systems.
             </p>
             <br />
             <p>
-              I'm especially interested in opportunities where engineering, climate solutions,
-              and data-driven decision making come together.
+              I enjoy building tools and analyses that help teams make better decisions - whether that means improving
+              engineering workflows, evaluating performance trends, or connecting technical and environmental objectives
+              in a clearer way.
             </p>
           </div>
 
           <div class="stat-box">
-            <h4>Highlights</h4>
+            <h4>Selected highlights</h4>
             <ul>
-              <li>Student, Reservoir Engineering at ARC Resources</li>
-              <li>Built 4 enterprise Power BI dashboards at Cenovus</li>
-              <li>Co-founded and lead Student Energy UBC</li>
-              <li>Experience across reservoir, distribution, and project engineering</li>
+              <li>Built enterprise Power BI dashboards supporting well performance and technical analysis at Cenovus.</li>
+              <li>Supported emissions reduction and CleanBC funding work at ARC Resources.</li>
+              <li>Co-founded and lead Student Energy UBC.</li>
+              <li>Developed a waste-to-value venture concept through Avatar Innovations Ignite.</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">
+          A selection of technical and strategic projects spanning reservoir engineering, analytics, and sustainability innovation.
+        </p>
+
+        <div class="grid two-col">
+          <article class="card project-card">
+            <h3>CHO Program Performance Dashboard</h3>
+            <div class="meta">Cenovus Energy | 2025-2026</div>
+            <p>
+              Developed a Power BI dashboard to replace manual PowerPoint lookbacks and create a reusable framework
+              for evaluating Conventional Heavy Oil program performance over time.
+            </p>
+            <p>
+              The dashboard supported forecast versus actual performance review, economics, subsurface trends,
+              and program-level comparisons, with a structure designed to scale year over year rather than function
+              as a one-off analysis.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <h3>CHO Tracer Program Dashboard, Workflow & Comment App</h3>
+            <div class="meta">Cenovus Energy | 2025-2026</div>
+            <p>
+              Played a leading role in the CHO tracer program across 33 multilateral wells, supporting inflow allocation,
+              tracer mass balance calculations, production interpretation, and cross-team technical communication.
+            </p>
+            <p>
+              Built and documented repeatable workflows, contributed to a Power BI dashboard for tracer analysis,
+              and developed a Power Apps-based comment form embedded within the dashboard to improve structured
+              collaboration and interpretation.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <h3>CHO Hole Size Analysis Dashboard</h3>
+            <div class="meta">Cenovus Energy | 2025-2026</div>
+            <p>
+              Developed a dashboard to evaluate the impact of production hole size on well performance, including both
+              absolute and normalized production comparisons across well groups.
+            </p>
+            <p>
+              The work required extensive data cleaning, manual validation, well classification, and comparison design
+              to support drilling and completion optimization decisions with a reusable analytical tool.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <h3>SiteLoop | Waste-to-Value Venture Concept</h3>
+            <div class="meta">Avatar Innovations Ignite | 2026</div>
+            <p>
+              Co-developed a venture concept focused on converting remote camp organic waste into value for reclamation,
+              connecting waste management, carbon opportunity, and topsoil needs into a circular system.
+            </p>
+            <p>
+              The concept explored in-vessel composting for remote industrial camps, with the goal of reducing landfill
+              trucking, lowering disposal costs, supporting reclamation, and creating shared value across operations,
+              environmental, and reclamation teams.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -417,8 +509,7 @@
       <div class="container">
         <h2 class="section-title">Experience</h2>
         <p class="section-intro">
-          Selected experience across reservoir engineering, emissions reduction, academic program development,
-          systems planning, and infrastructure project coordination.
+          Experience across reservoir engineering, emissions reduction, systems planning, academic development, and project coordination.
         </p>
 
         <div class="grid">
@@ -438,13 +529,13 @@
             <div class="meta">May 2025 - April 2026</div>
             <div class="submeta">Calgary, Alberta</div>
             <ul>
-              <li>Developed 4 enterprise Power BI dashboards supporting well performance reviews, forecasting, and diagnostics.</li>
-              <li>Built automated workflows using Power Query, VBA, and structured data models to improve data integrity.</li>
-              <li>Served as a team SME for Power BI, Power Apps, Power Automate, and Databricks.</li>
-              <li>Played a leading role in the 2025 CHO Tracer Program across 33 multilateral wells.</li>
-              <li>Presented tracer findings across multiple teams and coordinated data and sampling logistics.</li>
-              <li>Conducted CO2 migration tracking, volumetric estimates, reservoir mapping, and production forecasting.</li>
-              <li>Authored 17 EOR royalty incentive applications for Saskatchewan multilateral wells.</li>
+              <li>Developed 4 enterprise Power BI dashboards supporting well performance reviews, forecasting, diagnostics, and engineering decision-making.</li>
+              <li>Built automated workflows using Power Query, VBA, and structured data models to improve data integrity and reduce manual analysis effort.</li>
+              <li>Served as a team SME for Power BI, Power Apps, Power Automate, and Databricks, supporting adoption of analytics and automation tools.</li>
+              <li>Led core analytical work within the 2025 CHO tracer program, including inflow allocation, mass balance analysis, and well diagnostics across 33 multilateral wells.</li>
+              <li>Presented technical findings across teams and documented dashboard, workflow, and ownership handovers for continued use after term completion.</li>
+              <li>Conducted subsurface evaluations including CO2 migration tracking, volumetric estimates, reservoir mapping, and production forecasting.</li>
+              <li>Authored 17 EOR royalty incentive applications and contributed to well completion optimization analysis and recompletion opportunity screening.</li>
             </ul>
           </article>
 
@@ -453,10 +544,10 @@
             <div class="meta">May 2024 - April 2025</div>
             <div class="submeta">Vancouver, British Columbia</div>
             <ul>
-              <li>Contributed to micro-certificate development for professional learners.</li>
+              <li>Contributed to development of micro-certificate programs for professional learners.</li>
               <li>Improved academic support content in mathematics, writing, and student success.</li>
-              <li>Led continuous improvement of the UBC Academic Essentials course.</li>
-              <li>Developed HTML, CSS, and web design skills to improve course functionality and user experience.</li>
+              <li>Led ongoing enhancement of the UBC Academic Essentials course.</li>
+              <li>Developed HTML, CSS, and web design skills to improve course usability and experience.</li>
             </ul>
           </article>
 
@@ -465,11 +556,11 @@
             <div class="meta">May 2023 - December 2023</div>
             <div class="submeta">Edmonton, Alberta</div>
             <ul>
-              <li>Led a station consolidation project in Fort Saskatchewan addressing major safety concerns.</li>
-              <li>Built hydraulic models in SynergiGas to analyze distribution networks.</li>
+              <li>Led a station consolidation project in Fort Saskatchewan addressing safety concerns and improving operational efficiency.</li>
+              <li>Built hydraulic models in SynergiGas to support network analysis, equipment sizing, and system alterations.</li>
               <li>Authored 20+ project proposals for pipeline upgrades and customer load shifts.</li>
-              <li>Delivered a pipeline replacement proposal that saved $110k in maintenance costs.</li>
-              <li>Trained a co-op student and new EIT on hydraulic modeling and technical reporting.</li>
+              <li>Delivered a pipeline replacement proposal that reduced maintenance costs by $110k.</li>
+              <li>Trained a co-op student and new EIT on hydraulic modeling, technical reporting, and distribution system fundamentals.</li>
             </ul>
           </article>
 
@@ -478,58 +569,11 @@
             <div class="meta">May 2022 - August 2022</div>
             <div class="submeta">Mississauga, Ontario</div>
             <ul>
-              <li>Supported the Finch LRT project with progress reporting, drawing updates, and excavation calculations.</li>
-              <li>Prepared weekly updates on construction progress, road closures, and schedule delays.</li>
-              <li>Used AutoCAD to map surveyed pipe locations and improve excavation safety.</li>
+              <li>Supported the Finch LRT project with progress reporting, drawing updates, and excavation volume calculations.</li>
+              <li>Prepared weekly updates on construction progress, water main isolations, road closures, and schedule delays.</li>
+              <li>Used AutoCAD to map surveyed pipe locations and support safe excavation planning.</li>
               <li>Modeled excavated material volumes to support accurate contractor billing.</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-intro">
-          A mix of engineering design, sustainability, and applied technical problem solving.
-        </p>
-
-        <div class="grid two-col">
-          <article class="card project-card">
-            <h3>Solar Powered Wi-Fi Repeater</h3>
-            <div class="meta">2024</div>
-            <p>
-              Designed and implemented a solar-powered Wi-Fi repeater for xwcicəsəm Garden at the UBC Farm
-              in collaboration with UBC Land and Food Systems and UBC Building Operations.
-            </p>
-          </article>
-
-          <article class="card project-card">
-            <h3>Bioethanol Production from Corn Stover</h3>
-            <div class="meta">2023</div>
-            <p>
-              Completed a process design project focused on bioethanol production through fermentation,
-              including reactor design, purification P&ID, economic analysis, and safety risk assessment.
-            </p>
-          </article>
-
-          <article class="card project-card">
-            <h3>Energy-Harvesting Piezoelectric Floor Tile</h3>
-            <div class="meta">2022</div>
-            <p>
-              Worked on design, safety testing, and manufacturing of a piezoelectric floor tile in
-              collaboration with the UBC Wastenauts design team.
-            </p>
-          </article>
-
-          <article class="card project-card">
-            <h3>Waste-to-Value Venture Concept</h3>
-            <div class="meta">2026</div>
-            <p>
-              Developed a venture concept exploring waste-to-value opportunities in oil sands operations
-              through market research, technical feasibility analysis, and early-stage economic evaluation.
-            </p>
           </article>
         </div>
       </div>
@@ -539,7 +583,7 @@
       <div class="container">
         <h2 class="section-title">Leadership & Activities</h2>
         <p class="section-intro">
-          Leadership roles centered on clean energy education, sustainability, and community-building.
+          Leadership experience focused on clean energy education, sustainability, and interdisciplinary collaboration.
         </p>
 
         <div class="grid two-col">
@@ -548,8 +592,8 @@
             <div class="meta">December 2022 - Present</div>
             <div class="submeta">Vancouver, British Columbia</div>
             <ul>
-              <li>Co-founded the UBC chapter in partnership with Student Energy Global and the UBC student society.</li>
-              <li>Grew membership from 4 founding members to 50+ active participants.</li>
+              <li>Co-founded the UBC chapter in collaboration with Student Energy Global and the UBC student society.</li>
+              <li>Grew membership from 4 founding members to more than 50 active participants.</li>
               <li>Led programming including a career fair with 20+ energy companies, a clean energy conference, workshops, and case competitions.</li>
             </ul>
           </article>
@@ -559,9 +603,9 @@
             <div class="meta">February 2026 - May 2026</div>
             <div class="submeta">Calgary, Alberta</div>
             <ul>
-              <li>Developed a waste-to-value venture concept for oil sands operations.</li>
-              <li>Conducted market research, technical feasibility analysis, and economic evaluation.</li>
-              <li>Collaborated with mentors and cross-functional teams to refine the opportunity.</li>
+              <li>Developed a waste-to-value venture concept addressing remote camp waste and reclamation needs in oil sands operations.</li>
+              <li>Conducted market research, technical feasibility analysis, and early-stage economic evaluation.</li>
+              <li>Worked with mentors and cross-functional collaborators to shape the concept, value proposition, and implementation path.</li>
             </ul>
           </article>
 
@@ -582,19 +626,14 @@
       <div class="container">
         <h2 class="section-title">Resume</h2>
         <p class="section-intro">
-          Add your PDF resume here so visitors can download the latest version directly.
+          Download my resume for a fuller overview of my technical experience, projects, and leadership work.
         </p>
 
-        <div class="card">
-          <p>
-            Replace the placeholder link below with your uploaded resume file:
-          </p>
-          <br />
-          <p>
-            <a class="btn btn-primary" href="Christina-Salo-Resume.pdf" target="_blank" rel="noopener noreferrer">
-              Download Resume
-            </a>
-          </p>
+        <div class="card resume-box">
+          <p>Upload your latest PDF to the repository and keep the filename matched below.</p>
+          <a class="btn btn-primary" href="Christina-Salo-Resume.pdf" target="_blank" rel="noopener noreferrer">
+            Download Resume
+          </a>
         </div>
       </div>
     </section>
@@ -603,16 +642,14 @@
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <p class="section-intro">
-          The easiest way to reach me is by email. I'm always interested in conversations about engineering,
-          energy, sustainability, and new opportunities.
+          The best way to reach me is by email or LinkedIn.
         </p>
 
         <div class="card">
           <p><strong>Email:</strong> <a href="mailto:christinapsalo@gmail.com">christinapsalo@gmail.com</a></p>
-          <p><strong>Phone:</strong> 647-904-5562</p>
-          <p><strong>Location:</strong> Vancouver, British Columbia, Canada</p>
+          <p><strong>Location:</strong> Vancouver, BC, Canada</p>
           <div class="contact-links">
-            <a href="mailto:christinapsalo@gmail.com">Email me</a>
+            <a href="mailto:christinapsalo@gmail.com">Email</a>
             <a href="[linkedin.com](https://www.linkedin.com/)" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
@@ -622,7 +659,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Christina Salo. Built for a clean, simple public portfolio.</p>
+      <p>© 2026 Christina Salo</p>
     </div>
   </footer>
 </body>
